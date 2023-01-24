@@ -37,8 +37,8 @@ EXPOSE 8080 50000
 RUN curl https://pkg.jenkins.io/redhat-stable/jenkins.repo -o /etc/yum.repos.d/jenkins.repo && \
     rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key && \
     yum update && \
-    yum install -y centos-release-scl-rh-2-3.el7.centos && \
-    yum install -y  epel-release-8-11.el8.noarch && \
+RUN yum install -y centos-release-scl-rh-2-3.el7.centos && \
+RUN yum install -y  epel-release-8-11.el8.noarch && \
     curl https://copr.fedorainfracloud.org/coprs/alsadi/dumb-init/repo/epel-7/alsadi-dumb-init-epel-7.repo -o /etc/yum.repos.d/alsadi-dumb-init-epel-7.repo && \
     #run yum update to avoid package version mismatch between i686 and other archs
     yum -y update && \
